@@ -7,6 +7,7 @@ use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\API\DoctorController;
  use App\Http\Controllers\API\SkinTypeController;
 use App\Http\Controllers\API\RoutineController;
+use App\Http\Controllers\API\UserController;
 
 
 /*
@@ -46,5 +47,13 @@ Route::get('doctors/{id}/products', [DoctorController::class, 'productsByDoctor'
 Route::get('skins', [SkinTypeController::class, 'index']);
 Route::get('skins/{id}', [SkinTypeController::class, 'show']);
 
+
+Route::middleware('auth:sanctum')->group(function () {
+
+    Route::get('/profile', [UserController::class, 'show']); // get profile
+
+    Route::put('/profile', [UserController::class, 'update']); // update profile
+    
+});
 
 
