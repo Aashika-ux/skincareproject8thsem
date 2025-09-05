@@ -8,6 +8,8 @@ use App\Http\Controllers\API\DoctorController;
  use App\Http\Controllers\API\SkinTypeController;
 use App\Http\Controllers\API\RoutineController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\PasswordResetController;
+
 
 
 /*
@@ -20,6 +22,9 @@ use App\Http\Controllers\API\UserController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/send-otp', [PasswordResetController::class, 'sendOtp']);
+Route::post('/verify-otp', [PasswordResetController::class, 'verifyOtp']);
+Route::post('/reset-password', [PasswordResetController::class, 'resetPassword']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
