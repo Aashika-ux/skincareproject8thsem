@@ -46,6 +46,9 @@ Route::delete('/routines/{productId}', [RoutineController::class, 'destroy']);
 Route::get('products', [ProductController::class, 'index']);      // List all products
 Route::get('products/{id}', [ProductController::class, 'show']);  // Get single product
 
+Route::get('/products/search', [ProductController::class, 'search']);
+
+
 Route::get('doctors', [DoctorController::class, 'index']); // get all doctors
 Route::get('doctor/{id}', [DoctorController::class, 'show']); // get single doctor with products
 Route::get('doctors/{id}/products', [DoctorController::class, 'productsByDoctor']);
