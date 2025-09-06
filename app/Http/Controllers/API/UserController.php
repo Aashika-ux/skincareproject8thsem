@@ -63,4 +63,18 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
+     /**
+     * Delete the authenticated user's account.
+     */
+    public function destroy(Request $request)
+    {
+        $user = $request->user();
+
+        $user->delete(); // Delete the user
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Your account has been deleted successfully.'
+        ]);
+    }
 }
