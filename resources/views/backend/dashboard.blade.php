@@ -14,7 +14,10 @@
                     </div>
                     <div>
                         <h5 class="card-title">Products</h5>
-                        <h2 class="card-text">{{ $productsCount ?? 0 }}</h2>
+                        <!-- <h2 class="card-text">{{ $productsCount ?? 0 }}</h2> -->
+                         <h2 class="card-text">
+    {{ App\Models\Product::count() }}
+</h2>
                     </div>
                 </div>
             </div>
@@ -29,7 +32,11 @@
                     </div>
                     <div>
                         <h5 class="card-title">Users</h5>
-                        <h2 class="card-text">{{ $usersCount ?? 0 }}</h2>
+                        <!-- <h2 class="card-text">{{ $usersCount ?? 0 }}</h2> -->
+                                              <h2 class="card-text">
+    {{ App\Models\User::count() }}
+</h2>
+
                     </div>
                 </div>
             </div>
@@ -44,7 +51,10 @@
                     </div>
                     <div>
                         <h5 class="card-title">Doctors</h5>
-                        <h2 class="card-text">{{ $doctorsCount ?? 0 }}</h2>
+                        <!-- <h2 class="card-text">{{ $doctorsCount ?? 0 }}</h2> -->
+                                              <h2 class="card-text">
+    {{ App\Models\Doctor::count() }}
+</h2>
                     </div>
                 </div>
             </div>
@@ -52,3 +62,4 @@
     </div>
 </div>
 @endsection
+ 

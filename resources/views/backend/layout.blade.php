@@ -91,7 +91,7 @@
             <i class="bi bi-person-circle" style="font-size: 36px;"></i>
         </div>
         <div>
-            <h6>AashikaPanta</h6>
+            <h6>Aashika Panta</h6>
             <small>Admin</small>
         </div>
     </div>
